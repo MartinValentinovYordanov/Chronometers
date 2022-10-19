@@ -1,0 +1,21 @@
+
+<div class="ParentDiv" #ParentDiv>
+    <div class="element alignelement">
+    <p></p>
+    <button  class="RemoveButton" #RemoveButton (click)="Delete()">❌</button>
+    </div>
+    <div class="element">
+    <p class="elementP" ><span >{{ chronometerService.Model.timer.minutes.toString().padStart(2, '0') }}</span>:<span >{{ chronometerService.Model.timer.seconds.toString().padStart(2, '0') }}</span>:<span >{{ chronometerService.Model.timer.milliseconds.toString().padStart(2, '0') }}</span></p>
+    </div>
+    <div class="element">
+
+        
+    <button class="StartButton" *ngIf="!chronometerService.Model.isRunning" (click)="StartStopTimer()"></button>
+    
+    <button class="StopButton" *ngIf="chronometerService.Model.isRunning" (click)="StartStopTimer()"></button>
+
+    </div>
+    <div class="element">
+    <button class="ResetButton" #ResetButton (click)="Reset()"><span>⭮</span></button>
+    </div>
+    </div>

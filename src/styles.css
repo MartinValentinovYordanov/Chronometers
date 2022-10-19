@@ -1,1 +1,279 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-size:34px;
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    animation: changecolor 3s infinite;
+    animation-direction:alternate;
+}
+@keyframes changecolor{
+    from{
+        background-color:aqua;
+    }
+    to{
+        background-color:aquamarine;
+    }
+}
+.ResetButton {
+    color: black;
+    background-color: aqua;
+    padding: 14px;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.25s all;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.ResetButton:focus{
+    animation: RotateReset 1s;
+}
+@keyframes RotateReset{
+    from{
+
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.StartButton {
+    color: black;
+    background-color: aqua;
+    padding: 14px;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s all;
+    width:100%;
+    height:60px;
+    cursor:pointer;
+}
+    .StartButton::before {
+        content: 'Start';
+        font-size: 26px;
+    }
+    .StartButton:hover::before {
+        animation: StartButton1 1s;
+        position: relative;
+    }
+@keyframes StartButton1 {
+    from {
+        left: 0px;
+        color: rgba(0,0,0,0);
+        opacity: 0;
+    }
+
+    to {
+        left: -0.1px;
+        color: rgba(0,0,0);
+        opacity: 1;
+        transition: 0.5s all;
+    }
+}
+    .StartButton:hover::after {
+        content: ' ▶';
+        animation: StartButton 1s;
+        position: relative;
+    }
+@keyframes StartButton {
+    from {
+        left: -30px;
+        color: rgba(0,0,0,0);
+    }
+
+    to {
+        left: 0;
+        color: rgba(0,0,0);
+        transition: 0.5s all;
+    }
+}
+.StartButton:not(:hover)::after {
+    content: ' ▶';
+    color: rgba(0,0,0,0);
+    opacity: 0;
+    animation: StartButtonReverse 1s;
+    position: relative;
+    width: 0;
+}
+.StartButton:not(:hover)::before {
+    content: 'Start';
+    position: relative;
+    animation: StartButtonReverse1 1s;
+    right: -12px;
+    transition: 2s;
+}
+@keyframes StartButtonReverse1{
+    from {
+        right:0;
+    }
+    to {
+        right: -12px;
+    }
+}
+@keyframes StartButtonReverse {
+    from {
+        left: 0;
+        color: rgba(0,0,0);
+        opacity: 1;
+        width:0;
+    }
+
+    to {
+        left: -30px;
+        color: rgba(0,0,0,0);
+        opacity: 0;
+        transition: 0.5s all;
+       
+    }
+}
+    .StartButton:hover {
+        background: rgb(76 255 0);
+        transition: 2s;
+    }
+
+
+.StopButton {
+    color: white;
+    background-color: black;
+    padding: 14px;
+    font-size: 26px;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.25s all;
+    cursor: pointer;
+    height: 60px;
+    animation: StopButton 1s;
+}
+@keyframes StopButton{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+.StopButton::before {
+    content: 'Stop';
+}
+
+.AlignItems{ 
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;  
+    margin-left:auto;
+    margin-right:auto;
+}
+.elementP {
+    border: 1px solid black;
+    border-radius: 14px;
+    padding: 10px;
+    margin:0;
+    background: rgba(0, 0, 0);
+    color:white;
+    margin-bottom:10px;
+}
+.element {
+    animation: fade 1s;
+    
+}
+.AddChrono {
+    text-align:center;
+}
+
+    @keyframes changeOpacity {
+        from{
+        opacity:0;
+    }
+    to{
+        opacity:2;
+    }
+}
+.AddButton {
+    color: black;
+    margin-bottom: 70px;
+    transition: 0.5s all ease;
+    padding: 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+    .AddButton:hover::before {
+        content: 'Add Timer';
+        animation: changeOpacity 1s;
+        
+    }
+    
+.AddButton::before{
+    content:'+';
+}
+    .AddButton:hover {
+        background-color: transparent;
+        border-radius: 14px;
+        animation: changeWidthAddButton 1s;
+        width: 150px;
+    }
+@keyframes changeWidthAddButton{
+    from{
+        width:0;
+    }
+    to{
+        width:150px;
+    }
+}
+.alignelement{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    margin:0;
+    padding:0;
+}
+    .alignelement p{
+        color:white;
+    }
+    .Remove {
+        display: none;
+    }
+
+.RemoveButton {
+    background-color: Transparent;
+    font-size: 20px;
+    border: none;
+    padding:0px;
+}
+    .RemoveButton:hover {
+        animation: rotatingX 0.5s;
+
+    }
+@keyframes rotatingX{
+    from{
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+.ParentDiv {
+    border: 1px solid black;
+    border-radius:14px;
+    margin-inline: 100px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.65);
+    animation: fade 1s;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.MainDivClass{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

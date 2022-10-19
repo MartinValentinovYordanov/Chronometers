@@ -1,0 +1,1 @@
+on button click id increments and when you click button 1rst time id=1 , then the first chrono 
